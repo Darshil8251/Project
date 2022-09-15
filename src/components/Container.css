@@ -1,0 +1,14 @@
+.Container{
+    box-sizing: border-box;
+
+position: absolute;
+width: 1073px;
+height: 754px;
+left: 261px;
+top: 112px;
+
+background: #FFFFFF;
+border: 1px solid rgba(31, 31, 31, 0.2);
+border-radius: 8px 8px 0px 0px;
+
+}
