@@ -3,32 +3,26 @@
     padding: 30px 0px;
    
 
-    position: absolute;
+    position: fixed;
     width: 229px;
-    height: 772px;
+    height: 945px;
     left: 0px;
     top: 0px;
 
     background: #FFFFFF;
     border-right: 2px solid rgba(31, 31, 31, 0.5);
+
+  
+}
+.left image{
+    padding: 5px;
 }
 
 .Navbar {
     margin-top: 90px;
     margin-left: -42px;
-}
-
-.img1 {
-    width: 71px;
-    height: 25px;
-    margin-left: 45px;
-    padding-right: 10px;
-    font-family: 'Plus Jakarta Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 25px;
-    letter-spacing: -0.02em;
+    
+   
 }
 
 .Navbar li {
@@ -36,7 +30,7 @@
     list-style: none;
     padding: 25px;
     text-align: center;
-    width: 180px;
+    width: 236px;
 }
 
 .Navbar li a {
@@ -52,112 +46,12 @@ li:hover {
     box-sizing: 50%;
 }
 
-.Dashboard {
-
-    width: 83px;
-    height: 20px;
-
-    font-family: 'Plus Jakarta Sans';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 100px;
-    line-height: 25px;
-    letter-spacing: -0.02em;
-
-    color: #279500;
-
-    opacity: 0.45;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+.Dashboard{
+    margin-left: 8px;
 }
-
-.Ordered {
-    width: 83px;
-    height: 20px;
-
-    font-family: 'Plus Jakarta Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-
-    color: #279500;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+.Inventory{
+    margin-left: 2px;
 }
-
-.Analysics {
-    width: 83px;
-    height: 20px;
-
-    font-family: 'Plus Jakarta Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-
-    color: #279500;
-
-    opacity: 0.45;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-.Inventory {
-    width: 83px;
-    height: 20px;
-
-    font-family: 'Plus Jakarta Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-
-    color: #279500;
-
-    opacity: 0.45;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-.Resources {
-    width: 83px;
-    height: 20px;
-
-    font-family: 'Plus Jakarta Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-
-    color: #279500;
-
-    opacity: 0.45;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+.Resources{
+    margin-left: 2px;
 }

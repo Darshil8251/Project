@@ -1,21 +1,21 @@
-.Searchbar{
-    box-sizing: border-box;
+div input {
+    margin-top: 6px;
+    padding: 20px 32px;
+    gap: 10px;
+    position: absolute;
+    width: 851px;
+    height: 20px;
+    left: 261px;
+    top: 32px;
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 31, 31, 0.2);
+    border-radius: 8px;
+}
 
-/* Auto layout */
-
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 12px 32px;
-gap: 10px;
-
-position: absolute;
-width: 851px;
-height: 48px;
-left: 261px;
-top: 32px;
-
-background: #FFFFFF;
-border: 1px solid rgba(31, 31, 31, 0.2);
-border-radius: 8px;
+div button {
+    background-color: #6c757d;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    padding: 5px;
 }

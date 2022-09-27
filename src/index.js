@@ -1,30 +1,14 @@
-import React from 'react';
-import {createRoot} from 'react-dom/client';
-import  ReactDOM  from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import Navbar from "./components/Navbar.js";
-import Right from "./components/Right.js"
-import Container from './components/Container';
-import {StrictMode} from 'react';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
 
-
-// const root = ReactDOM.createRoot(document.getElementById('));
-// ReactDOM.render(
-//    <React.StrictMode>
-//    <Navbar/>
-//   <Right/>
-//   <Container/>
-// </React.StrictMode>
-//    ,root
- // );
-
-
- const rootElement = document.getElementById('root');
-const root = createRoot(rootElement);
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <StrictMode>
-    <Navbar/>
-  </StrictMode>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
+reportWebVitals();
