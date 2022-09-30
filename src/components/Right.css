@@ -1,3 +1,5 @@
+
+
 div input {
     margin-top: 6px;
     padding: 20px 32px;
@@ -11,11 +13,50 @@ div input {
     border: 1px solid rgba(31, 31, 31, 0.2);
     border-radius: 8px;
 }
-
-div button {
+.icon-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #333333;
+    background: #dddddd;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    margin-left: 1200px;
+    margin-top: 42px;
+  }
+  
+  .icon-button:hover {
+    cursor: pointer;
+  }
+  
+  .icon-button:active {
+    background: #cccccc;
+  }
+  
+  .icon-button__badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 25px;
+    height: 25px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .Login{
     background-color: #6c757d;
     color: white;
     border: 3px solid black;
     border-radius: 8px;
     padding: 5px;
+    margin-left: 1250px;
+    margin-top: -15px;
 }
