@@ -1,8 +1,8 @@
 import React from "react";
 import Detail from "./Detail";
 import "./Ordered.css";
-
-
+import { useEffect, useState } from "react";
+import Zomato from "./Zomato";
 
 function Ordered() {
   const mystyle = {
@@ -10,10 +10,112 @@ function Ordered() {
     marginleft: "261px",
   };
 
+  const [Details, setDetails] = useState([{}]);
+  const FetchData = async () => {
+    let res = await fetch(
+      "https://heyq.bsite.net/api/api/orderapi/71897957-87eb-45c0-8d50-a73c5490f17e",
+      {
+        mode: "cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    let data = await res.json();
+    setDetails(data);
+  };
+
+  useEffect(() => {
+    FetchData();
+  }, []);
+
+  // function Zomato(data){
+
+  //   if(data.marketPlaceName=="Zomato"){
+  //     return(
+  //       data.map((item, index) => {
+  //         return (
+  //           <tr key={index}>
+  //             <th scope="row">{index + 1}</th>
+
+  //             <td className="table_order_details_orderidname">
+  //               <div className="table_order_details">
+  //                 <img
+  //                   className="table_order_details_img"
+  //                   src="logo192.png"
+  //                 />
+  //                 {item.orderId} <br />
+  //                 {item.customerName}
+  //               </div>
+  //             </td>
+  //             <td>{item.itemName}</td>
+  //             <td>{item.price}</td>
+  //             <td>{item.deliveryBoyName}</td>
+  //             <td>{item.location}</td>
+  //             <td className="order_status">{item.status}</td>
+  //           </tr>
+  //         );
+  //       })
+  //     )
+  //   }
+  //   else{
+  //     return (console.log("Ordered Not Received"))
+  //   }
+
+  // }
+
+  function zomato() {
+    <table id="example" className="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">Order Details</th>
+          <th scope="col">Items</th>
+          <th scope="col">Totle price</th>
+          <th scope="col">Delivery Details</th>
+          <th scope="col">Location</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {Details.map((item, index) => {
+          if (item.marketPlaceName == "Zomato") {
+            {
+              /* <tr key={index}>
+              <th scope="row">{index + 1}</th>
+
+              <td className="table_order_details_orderidname">
+                <div className="table_order_details">
+                  <img className="table_order_details_img" src="logo192.png" />
+                  {item.orderId} <br />
+                  {item.customerName}
+                </div>
+              </td>
+              <td>{item.itemName}</td>
+              <td>{item.price}</td>
+              <td>{item.deliveryBoyName}</td>
+              <td>{item.location}</td>
+              <td className="order_status">{item.status}</td>
+            </tr>
+
+     */
+            }
+            alert("this is zomato oederd");
+            {
+              /* <Zomato Details={Details}/> */
+            }
+          }
+        })}
+      </tbody>
+    </table>;
+  }
+
   return (
     <>
+     
       <div className="maincontainer" style={mystyle}>
-      <div className="container-fluid">
+        <div className="container-fluid">
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -28,7 +130,7 @@ function Ordered() {
                 <div className="nav-item">
                   <li className="border rounded my-3 mx-3">
                     <p className="navbar-brand navjs ">
-                      Filter By{" "}
+                      Filter By
                       <i
                         className="fas fa-caret-down"
                         style={{ marginTop: "3px" }}
@@ -49,9 +151,7 @@ function Ordered() {
                           <div className="dropdown-menu-1 dropdown border rounded">
                             <ul>
                               <li>
-                                <a href="/" className="dropdown-item">
-                                  Zomato
-                                </a>
+                                <button onClick={zomato}>Zomato</button>
                               </li>
                               <li>
                                 <a href="/" className="dropdown-item ">
@@ -134,9 +234,8 @@ function Ordered() {
         </div>
 
         <Detail />
-    
-   </div>
-   <br />
+      </div>
+      <br />
     </>
   );
 }
