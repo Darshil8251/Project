@@ -2,7 +2,7 @@ import React from "react";
 import Detail from "./Detail";
 import "./Ordered.css";
 import { useEffect, useState } from "react";
-
+import NotAccepted from './NotAccepted';
 
 function Ordered() {
   const mystyle = {
@@ -31,9 +31,11 @@ function Ordered() {
   }, []);
 
     
- const Pending=()=>{
-  console.log("--------------------");
-  <Pending/>
+ const NotAccepted=()=>{
+  console.log("++++++++++++++");
+  
+  <NotAccepted/>
+  
  }
 
 return (
@@ -123,9 +125,7 @@ return (
                 </li>
               </div>
               <div className="status" style={{ marginTop: "20px", marginLeft: "280px" }} >
-                Status: <button onClick={()=>{
-                console.log("+++++++++");
-                }}>Pending</button>
+                Status: <button onClick={NotAccepted}> Pending</button>
                 <button>Patch</button>
                 <button>Cancelled</button>
               </div>
@@ -134,7 +134,8 @@ return (
         </div>
       </div>
       <Detail />
-      <Pending/>
+      <NotAccepted/>
+      
     </div>
     <br />
   </>
