@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import './Zomato.css';
 
 function Zomato({Details}) {
   return (

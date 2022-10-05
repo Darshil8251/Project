@@ -1,17 +1,18 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import "./Detail.css";
 
+import React from 'react';
+import  { useEffect, useState } from "react";
+import './Pending.css';
 
-function Detail() {
-  const [Details, setDetails] = useState([{}]);
+function Pending() {
+
+    const [Details, setDetails] = useState([{}]);
   const [currentPage, setcurrentPage] = useState(3);
   const [postsPerPage,setpostsPerPage] = useState(5);
   
  
   const FetchData = async () => {
     let res = await fetch(
-      "https://heyq.bsite.net/api/api/orderapi/71897957-87eb-45c0-8d50-a73c5490f17e",
+      "https://heyq.bsite.net/api/api/getstatusproduct/1be95880-5a7f-4ff2-a28a-d3db56423854/NotAccepted",
       {
         mode: "cors",
         headers: {
@@ -22,13 +23,6 @@ function Detail() {
     );
     let data = await res.json();
     setDetails(data);
-
-    // .then((data) => {
-    //   return data.json();
-    // })
-    // .then((data) => {
-    //   setDetails(data);
-    // });
   };
 
   useEffect(() => {
@@ -50,9 +44,8 @@ function Detail() {
 const prevPage = () => {
 if(currentPage !== 1) setcurrentPage(currentPage - 1)
 }
-
   return (
-    <>
+    <div>
       <div>
         <table id="example" className="table table-striped">
           <thead>
@@ -129,8 +122,8 @@ if(currentPage !== 1) setcurrentPage(currentPage - 1)
 
 
       </div>
-    </>
+    </div>
   );
 }
 
-export default Detail;
+export default Pending;
