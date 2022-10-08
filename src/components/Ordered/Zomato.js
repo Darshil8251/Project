@@ -27,8 +27,7 @@ function Zomato({Details}) {
                     <div className="table_order_details">
                       <img
                         className="table_order_details_img"
-                        src="logo192.png"
-                      />
+                        src="logo192.png"/>
                       {item.orderId} <br />
                       {item.customerName}
                     </div>
