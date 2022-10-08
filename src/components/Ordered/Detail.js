@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import "./Detail.css";
 
 function Detail() {
-  const [Details, setDetails] = useState([{}]);
+    const [Details, setDetails] = useState([{}]); //State to render the fetched or Filtered Data
   
-  const [resetdata,setresetdata]=useState([{}]);
+  const [resetdata,setresetdata]=useState([{}]); //To filter The data
 
   const [currentPage, setcurrentPage] = useState(1);
   const [postsPerPage, setpostsPerPage] = useState(5);
@@ -83,26 +83,38 @@ function Detail() {
               </button>
               <div className="dropdown-content">
                 <a
-                  onClick={() =>
-                   
-                    setDetails(
-                      Details.filter(
-                        (item) => item.marketPlaceName === "Zomato"
-                      )
-                    )
+                    onClick={
+                        () => {setDetails(
+                            resetdata.filter(
+                            (item) => item.marketPlaceName === "Zomato"
+                            )
+                        )
+                        setcurrentPage(1);
+                    }
+
                   }
                 >
                   Zomato
                 </a>
-                <a onClick={() =>
-
-                    setresetdata(
-                      resetdata.filter(
-                        (item) => item.marketPlaceName === "Swiggy"
-                      )
-                    )
+                              <a onClick={() => {
+                                  setDetails(
+                                      resetdata.filter(
+                                          (item) => item.marketPlaceName === "Swiggy"
+                                      )
+                                  )
+                                  setcurrentPage(1);
+                              }
+                                  
                   }>Swiggy</a>
-                <a href="/">Uber Eats</a>
+                              <a onClick={() => {
+                                  setDetails(
+                                      resetdata.filter(
+                                          (item) => item.marketPlaceName === "Uber Eats"
+                                      )
+                                  )
+                                  setcurrentPage(1);
+                              }
+                }>Uber Eats</a>
               </div>
             </div>
 
@@ -140,7 +152,7 @@ function Detail() {
                     className="statusbutton"
                     onClick={() =>
                       setDetails(
-                        Details.filter((item) => item.status === "NotAccepted")
+                          resetdata.filter((item) => item.status === "Accepted" || item.status === "Ready")
                       )
                     }
                   >
@@ -148,10 +160,18 @@ function Detail() {
                   </a>
                 </li>
                 <li className="statuscss statuscolor">
-                  <a className="statusbutton">Patched</a>
+                    <a className="statusbutton" onClick={() =>
+                        setDetails(
+                            resetdata.filter((item) => item.status === "Completed")
+                        )
+                    }>Patched</a>
                 </li>
                 <li className="statuscss statuscolor">
-                  <a href="/" className="statusbutton">
+                    <a className="statusbutton" onClick={() =>
+                        setDetails(
+                            resetdata.filter((item) => item.status === "Cancelled")
+                        )
+                    }>
                     Cancelled
                   </a>
                 </li>

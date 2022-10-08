@@ -1,8 +1,8 @@
 
 
-import React, { PureComponent } from 'react';
+//import React, { PureComponent } from 'react';
 
-import { PieChart, Pie, Tooltip } from 'recharts';
+//import { PieChart, Pie, Tooltip } from 'recharts';
 
 function Dashboard() {
 
@@ -14,14 +14,9 @@ function Dashboard() {
   ];
   return (
     <>
-  
-        <div style={{marginLeft:"100px"}}>
-        <PieChart width={400} height={400}>
-          <Pie data={data01} dataKey="value" cx="50%" cy="50%" outerRadius={60} fill="#000000" />
-          <Tooltip/>
-        </PieChart>
-        </div>
-       
+    
+        
+
     
     </>
       
