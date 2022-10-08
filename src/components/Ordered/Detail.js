@@ -1,6 +1,7 @@
 // This component Use for Print Data into Table
 
 import React, { useEffect, useState } from "react";
+import { HubConnectionBuilder } from "@microsoft/signalr";
 import "./Detail.css";
 
 function Detail() {
@@ -11,6 +12,26 @@ function Detail() {
   const [currentPage, setcurrentPage] = useState(1);
   const [postsPerPage, setpostsPerPage] = useState(5);
 
+
+    const connection = new HubConnectionBuilder().withUrl("http://localhost:5226/signalRServer").build();
+
+    connection.on("OrderUpdated", async (object) => {
+    // Code for Pop UP Model object the data of newly added order.
+        console.log(typeof object);
+        let stringify = JSON.stringify(object)
+        let data = await JSON.parse(stringify);
+        setDetails(data);
+        setresetdata(data);
+        
+    })
+    var s = "71897957-87eb-45c0-8d50-a73c5490f17e";
+    connection.start().then(() => {
+        connection.invoke("Get", s).catch((err) => console.error(err));
+        console.log("connected");
+    }).catch((err) => {
+        console.log(err);
+    });
+    
   // Fetching Data From API
   const FetchData = async () => {
     let res = await fetch(
@@ -22,7 +43,7 @@ function Detail() {
           "Content-Type": "application/json",
         },
       }
-    );
+      );
     let data = await res.json();
     setDetails(data);
     setresetdata(data);
